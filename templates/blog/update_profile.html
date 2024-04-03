@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <div class="well">
+        <h4>Fill new information!</h4>
+        <form role="form" method="POST" action="{% url 'accept_update_profile' %}" class="input-group">
+            {% csrf_token %}
+            <div style="display: flex;"><h5>New avatar: <input name="user_avatar" class="form-control" type="file"></h5></div>
+            <div style="display: flex;"><h5>New username: <input name="username" class="form-control" value="{{user.username}}"></h5></div>
+            <div style="display: flex;"><h5>New first name: <input name="first_name" class="form-control" value="{{user.first_name}}"></h5></div>
+            <div style="display: flex;"><h5>New last name: <input name="last_name" class="form-control" value="{{user.last_name}}"></h5></div>
+            <div style="display: flex;"><h5>New email: <input type="email" name="email" class="form-control" value="{{user.email}}"></h5></div>
+            <div style="display: flex;"><h5>New password: <input type="password" name="password" class="form-control"></h5></div>
+            <textarea style="display: none;" class="form-control" name="id">{{user.id}}</textarea>
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </button>
+            </span>
+        </form>
+    </div>
+{% endblock %}

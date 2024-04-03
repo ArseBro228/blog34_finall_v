@@ -1,0 +1,13 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <img src="{{user.blog_user_info.avatar.url}}" alt="Error 404" style="width: 128px; height: 128px;">
+    <h3>username: {{user.username}}</h3>
+    <h3>first_name: {{user.first_name}}</h3>
+    <h3>last_name: {{user.last_name}}</h3>
+    <h3>email: {{user.email}}</h3>
+    <h3>password: *******</h3>
+    <br>
+    <br>
+    <a href="update_profile" style="text-decoration: none; color: black; border: 1px solid grey; padding: 10px; border-radius: 15px;"><span class="glyphicon glyphicon-pencil"></span></a>
+
+{% endblock %}
