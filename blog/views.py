@@ -175,7 +175,7 @@ def accept_update_profile(request):
     user_id = int(request.POST.get('id'))
     user = User.objects.get(pk=user_id)
 
-    user.blog_user_info.avatar = os.path.join(os.path.abspath(__file__), '../../uploads/photos', user_avatar)
+    user.blog_user_info.avatar = os.path.join('photos', user_avatar)
     user.blog_user_info.save()
 
     user.username = username
